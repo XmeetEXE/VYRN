@@ -7,24 +7,26 @@
 <meta name="description" content="VYRN — Sound, uninterrupted. A free Android music player by XmeetEXE.">
 <title>VYRN — Sound, uninterrupted.</title>
 <style>
-:root{color-scheme:dark;--bg:#090a0d;--panel:#111319;--line:#252832;--muted:#9a9eaa;--white:#f4f5f7;--accent:#c8ff62}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#1d2420 0%,var(--bg) 48%);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;display:flex;flex-direction:column}
-a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
-nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0c}.brand{font-weight:850;letter-spacing:.24em;font-size:19px}.brand span{color:var(--accent)}.navlink{font-size:13px;color:#c6c8d0}
-.hero{flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center;padding:86px 0 96px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #343a30;background:#a4ff5310;border-radius:999px;padding:8px 12px;color:#d8e7c9;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
-h1{font-size:clamp(54px,8vw,98px);line-height:.94;letter-spacing:-.075em;margin:25px 0 22px;font-weight:850}h1 span{color:var(--accent)}.sub{font-size:clamp(17px,2vw,20px);line-height:1.65;color:#b5b8c2;max-width:510px;margin:0 0 30px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:52px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;font-size:14px;font-weight:750;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--accent);color:#11150c}.secondary{border:1px solid #353943;background:#ffffff05}.meta{margin-top:17px;color:#777d89;font-size:12px;line-height:1.6}
-.device{min-height:440px;display:grid;place-items:center;position:relative}.orb{position:absolute;width:300px;height:300px;border-radius:50%;background:#b8ff5b12;filter:blur(40px)}.logo-art{position:relative;display:block;width:min(100%,520px);height:auto;aspect-ratio:1;object-fit:contain;border-radius:22px;filter:drop-shadow(0 25px 55px #0009)}
-.features{padding:0 0 72px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{border:1px solid var(--line);background:linear-gradient(145deg,#ffffff06,#ffffff02);border-radius:17px;padding:22px}.icon{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#c8ff6214;color:var(--accent);font-size:17px}.feature h2{font-size:15px;margin:17px 0 8px}.feature p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
-footer{border-top:1px solid #ffffff0c;padding:22px 0;color:#777d89;font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer a{color:#c4c7cf}
-@media(max-width:720px){.hero{grid-template-columns:1fr;gap:25px;padding:65px 0 55px}.device{min-height:400px}.phone{transform:none}.features{grid-template-columns:1fr;padding-bottom:45px}h1{font-size:clamp(58px,15vw,82px)}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+:root{color-scheme:dark;--bg:#050609;--fg:#f4f5f7;--muted:#a4a8b4;--line:#ffffff18;--silver:#d9e5f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 50% 35%,#1b2430 0,transparent 48%),radial-gradient(ellipse at 80% 80%,#10151d 0,transparent 45%);opacity:.9}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}.brand{font-weight:600;letter-spacing:.32em;font-size:17px}.brand span{color:#aebed4}.navright{display:flex;align-items:center;gap:28px}.navlink{font-size:11px;letter-spacing:.14em;color:#c4c9d3}.navpill{border:1px solid #ffffff25;border-radius:999px;padding:12px 17px}
+.hero{min-height:calc(100vh - 89px);display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center;padding:54px 0 76px}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#d3deec;font-size:10px;letter-spacing:.22em;text-transform:uppercase}.dot{width:6px;height:6px;border-radius:50%;background:#e9f3ff;box-shadow:0 0 15px #dbeaff}
+h1{font-size:clamp(58px,7vw,92px);line-height:.92;letter-spacing:-.075em;margin:28px 0 25px;font-weight:580}h1 span{display:block;color:#9ca9ba;font-weight:350}.sub{font-size:16px;line-height:1.85;color:#b3b8c3;max-width:430px;margin:0 0 32px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:51px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.primary{background:#edf3fb;color:#090b10}.secondary{border:1px solid #ffffff2d;background:#ffffff04}.meta{margin-top:18px;color:#737b89;font-size:11px;line-height:1.8}
+.device{min-height:520px;display:grid;place-items:center;position:relative}.orb{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:#8298b51b;filter:blur(70px)}.logo-art{position:relative;display:block;width:min(100%,650px);height:auto;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 25px 80px #000c);animation:reveal 1.2s ease both}@keyframes reveal{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;padding:20px 0 25px;border-bottom:1px solid var(--line)}.section-head h2{font-size:clamp(24px,4vw,38px);letter-spacing:-.05em;font-weight:450;margin:0}.section-head p{color:#8e95a3;font-size:12px;line-height:1.7;max-width:340px;margin:0}
+.features{padding:0 0 90px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--line)}.feature{padding:27px 24px 30px 0;border-right:1px solid var(--line)}.feature+.feature{padding-left:24px}.feature:last-child{border-right:0}.icon{color:#dce7f6;font-size:22px;margin-bottom:24px}.feature h2{font-size:14px;letter-spacing:.01em;font-weight:600;margin:0 0 12px}.feature p{font-size:12px;line-height:1.9;color:#969daa;margin:0;max-width:290px}
+footer{padding:24px 0;color:#7e8592;font-size:10px;letter-spacing:.06em}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer a{color:#d0d5df}
+@media(max-width:760px){.wrap{width:min(100% - 34px,580px)}nav{height:72px}.navright{gap:13px}.navlink{font-size:9px}.navpill{padding:10px 11px}.hero{min-height:auto;grid-template-columns:1fr;gap:8px;padding:64px 0 45px}.hero-copy{order:1}.device{order:0;min-height:0;margin:0 auto 10px;width:100%;max-width:390px}.logo-art{width:100%}h1{font-size:clamp(57px,14vw,80px);margin:22px 0}.sub{font-size:14px}.features{grid-template-columns:1fr;padding-bottom:40px}.section-head{display:block;padding:0 0 20px}.section-head p{margin-top:12px}.feature,.feature+.feature{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.feature:last-child{border-bottom:0}.icon{margin-bottom:14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<nav class="wrap"><a class="brand" href="#" aria-label="VYRN home">VYRN<span>.</span></a><a class="navlink" href="https://github.com/XmeetEXE/VYRN">VIEW SOURCE ↗</a></nav>
+<nav class="wrap"><a class="brand" href="#" aria-label="VYRN home">V Y R N</a><div class="navright"><a class="navlink" href="#features">EXPERIENCE</a><a class="navlink" href="https://github.com/XmeetEXE/VYRN">SOURCE ↗</a><a class="navlink navpill" href="https://github.com/XmeetEXE/VYRN/releases/download/v2.0/VYRN-2.apk" download>GET VYRN ↓</a></div></nav>
 <main class="wrap">
 <section class="hero">
-<div>
+<div class="hero-copy">
 <div class="eyebrow"><span class="dot"></span> ANDROID MUSIC PLAYER · V2.0</div>
 <h1>Sound,<br><span>uninterrupted.</span></h1>
 <p class="sub">Your music. Your flow. A cleaner listening experience, built for Android by XmeetEXE.</p>
@@ -33,13 +35,14 @@ footer{border-top:1px solid #ffffff0c;padding:22px 0;color:#777d89;font-size:12p
 </div>
 <div class="device" aria-label="VYRN glass-ring logo"><div class="orb"></div><img class="logo-art" src="https://i.ibb.co/27JfnL2q/Futuristic-Glass-Ring-Logo.png" alt="VYRN by XMEET — luminous glass ring logo" width="1024" height="1024" fetchpriority="high"></div>
 </section>
+<div class="section-head" id="features"><h2>Sound, without the noise.</h2><p>A focused listening experience, designed to stay out of the way and keep you in the moment.</p></div>
 <section class="features" aria-label="Highlights">
 <article class="feature"><div class="icon">♫</div><h2>Your music, your way</h2><p>A focused listening experience with a minimal interface that keeps the music front and center.</p></article>
 <article class="feature"><div class="icon">◈</div><h2>Made for Android</h2><p>Built as an Android music player, with a release page that keeps downloads easy to find.</p></article>
 <article class="feature"><div class="icon">⌘</div><h2>Open project</h2><p>Explore the source, check release notes, and follow development on GitHub.</p></article>
 </section>
 </main>
-<footer><div class="wrap foot"><span>© 2026 VYRN · By XmeetEXE</span><span><a href="https://github.com/XmeetEXE/VYRN/releases/download/v2.0/VYRN-2.apk" download>Download APK</a> &nbsp;·&nbsp; <a href="https://github.com/XmeetEXE/VYRN">GitHub</a></span></div></footer>
+<footer><div class="wrap foot"><span>© 2026 VYRN — A LISTENING EXPERIENCE BY XMEET</span><span><a href="https://github.com/XmeetEXE/VYRN/releases/download/v2.0/VYRN-2.apk" download>Download APK</a> &nbsp;·&nbsp; <a href="https://github.com/XmeetEXE/VYRN">GitHub</a></span></div></footer>
 
 
 
