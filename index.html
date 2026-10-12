@@ -28,7 +28,7 @@ footer{border-top:1px solid #ffffff0c;padding:22px 0;color:#777d89;font-size:12p
 <div class="eyebrow"><span class="dot"></span> ANDROID MUSIC PLAYER · V2.0</div>
 <h1>Sound,<br><span>uninterrupted.</span></h1>
 <p class="sub">Your music. Your flow. A cleaner listening experience, built for Android by XmeetEXE.</p>
-<div class="actions"><a class="btn primary" href="https://github.com/XmeetEXE/VYRN/releases/tag/v2.0">↓ &nbsp; Download VYRN v2.0</a><a class="btn secondary" href="https://github.com/XmeetEXE/VYRN/releases">All releases ↗</a></div>
+<div class="actions"><a class="btn primary" id="downloadBtn" href="https://github.com/XmeetEXE/VYRN/releases/tag/v2.0">↓ &nbsp; Download VYRN v2.0</a><a class="btn secondary" href="https://github.com/XmeetEXE/VYRN/releases">All releases ↗</a></div>
 <p class="meta">Free to download · Android APK via GitHub Releases<br>Choose the APK asset on the release page to install.</p>
 </div>
 <div class="device" aria-label="Illustrative VYRN music player mockup"><div class="orb"></div><div class="phone"><div class="screen"><div class="speaker"></div><div class="mini-brand">VYRN<span style="color:var(--accent)">.</span></div><div class="album">V.</div><div class="track">Your soundtrack.</div><div class="artist">PLAY IT YOUR WAY</div><div class="wave"><i style="--h:7px"></i><i style="--h:15px"></i><i style="--h:10px"></i><i style="--h:22px"></i><i style="--h:13px"></i><i style="--h:19px"></i><i style="--h:8px"></i><i style="--h:16px"></i><i style="--h:11px"></i><i style="--h:23px"></i><i style="--h:9px"></i><i style="--h:17px"></i><i style="--h:6px"></i></div><div class="controls"><span>‹‹</span><span class="play">▶</span><span>››</span></div></div></div><div class="phone-note">DESIGNED FOR YOUR EVERYDAY LISTENING</div></div>
@@ -40,5 +40,34 @@ footer{border-top:1px solid #ffffff0c;padding:22px 0;color:#777d89;font-size:12p
 </section>
 </main>
 <footer><div class="wrap foot"><span>© 2026 VYRN · By XmeetEXE</span><span><a href="https://github.com/XmeetEXE/VYRN/releases/tag/v2.0">Download</a> &nbsp;·&nbsp; <a href="https://github.com/XmeetEXE/VYRN">GitHub</a></span></div></footer>
+
+<script>
+(() => {
+  const button = document.getElementById('downloadBtn');
+  if (!button) return;
+  button.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const original = button.innerHTML;
+    button.innerHTML = 'Finding APK…';
+    button.setAttribute('aria-busy', 'true');
+    try {
+      const response = await fetch('https://api.github.com/repos/XmeetEXE/VYRN/releases/tags/v2.0', {
+        headers: { 'Accept': 'application/vnd.github+json' }
+      });
+      if (!response.ok) throw new Error('Release lookup failed');
+      const release = await response.json();
+      const apk = (release.assets || []).find(asset => asset.name.toLowerCase().endsWith('.apk'));
+      if (!apk) throw new Error('No APK asset found');
+      window.location.href = apk.browser_download_url;
+    } catch (_) {
+      window.location.href = 'https://github.com/XmeetEXE/VYRN/releases/tag/v2.0';
+    } finally {
+      button.innerHTML = original;
+      button.removeAttribute('aria-busy');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
